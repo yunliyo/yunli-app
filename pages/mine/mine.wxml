@@ -1,0 +1,65 @@
+<!--pages/mine/mine.wxml-->
+<navigation-bar id="navigationBar" title="韵狸YUNLI" back="{{false}}" home="{{false}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="user-section">
+    <text>过眼溪山，旧时曾识</text>
+  </view>
+  <!-- 功能菜单区域 -->
+  <view class="menu-section">
+    <view class="menu-list">
+      <!-- 关于 -->
+      <view class="menu-item" bindtap="handleNavClick" data-type="about">
+        <van-icon class="menu-icon" name="info-o" size="40rpx" color="#8d4bbb" />
+        <text class="menu-text">关于我</text>
+        <text class="menu-arrow">></text>
+      </view>
+      <!-- 复制文本 -->
+      <view class="menu-item" bindtap="handleNavClick" data-type="copy" data-content="https://www.liqiang.info" data-msg="链接已复制">
+        <van-icon class="menu-icon" name="link-o" size="40rpx" color="#8d4bbb" />
+        <text class="menu-text">个人网站</text>
+        <text class="menu-arrow">www.liqiang.info</text>
+      </view>
+      <!-- 复制微信号 -->
+      <view class="menu-item" bindtap="handleNavClick" data-type="copy" data-content="微信号: yunliyo101" data-msg="微信号已复制">
+        <van-icon class="menu-icon" name="wechat" size="40rpx" color="#8d4bbb" />
+        <text class="menu-text">微信号</text>
+        <text class="menu-wechat">yunliyo101</text>
+      </view>
+      <!-- 客服电话 -->
+      <view class="menu-item" bindtap="handleNavClick" data-type="phone" data-phone="13896074726">
+        <van-icon class="menu-icon" name="phone-o" size="40rpx" color="#8d4bbb" />
+        <text class="menu-text">电话</text>
+        <text class="menu-phone">+86 13896074726</text>
+      </view>
+      <!-- 发送邮件 -->
+      <view class="menu-item" bindtap="handleNavClick" data-type="email" data-email="yunliyo@foxmail.com">
+        <van-icon class="menu-icon" name="envelop-o" size="40rpx" color="#8d4bbb" />
+        <text class="menu-text">邮箱</text>
+        <text class="menu-email">yunliyo@foxmail.com</text>
+      </view>
+      <!-- 显示二维码 -->
+      <view class="menu-item" bindtap="handleNavClick" data-type="qrcode" data-title="打赏支持">
+        <van-icon class="menu-icon" name="gift-o" size="40rpx" color="#8d4bbb" />
+        <text class="menu-text">打赏支持</text>
+        <text class="menu-arrow">></text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<!-- 关于弹窗 -->
+<view class="modal-overlay" wx:if="{{showAbout}}" bindtap="closeAbout">
+  <view class="modal-content modal-text-content" catchtap="stopPropagation">
+    <view class="modal-title">关于我</view>
+    <text class="modal-text">韵狸，男，95后，一个热爱诗词书画的程序员，有个人作品集《明漪集》。</text>
+    <view class="modal-close" bindtap="closeAbout">关闭</view>
+  </view>
+</view>
+<!-- 二维码弹窗 -->
+<view class="modal-overlay" wx:if="{{showQrcode}}" bindtap="closeQrcode">
+  <view class="modal-content" catchtap="stopPropagation">
+    <view class="modal-title">{{qrcodeTitle}}</view>
+    <image class="qrcode-image" src="/images/donate.png" mode="aspectFit" bindtap="previewQrcode"></image>
+    <text class="qrcode-tip">点击图片长按保存至手机</text>
+    <view class="modal-close" bindtap="closeQrcode">关闭</view>
+  </view>
+</view>

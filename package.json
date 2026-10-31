@@ -1,0 +1,9 @@
+{
+  "name": "yunli-app",
+  "version": "1.0.0",
+  "description": "微信小程序版个人主页",
+  "private": true,
+  "dependencies": {
+    "@vant/weapp": "^1.11.7"
+  }
+}

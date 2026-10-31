@@ -1,0 +1,116 @@
+/* index.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+navigation-bar {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.scrollarea {
+  background: linear-gradient(to right, #fcfcf1 0%, #f2f2e7 100%);
+  font-family: "SimSun", "宋体", serif;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.avatar {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  margin-bottom: 24px;
+  border: 3px solid rgba(255,255,255,0.8);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.nickname {
+  font-size: 30px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+.bio {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 30px;
+  text-align: center;
+  max-width: 280px;
+  line-height: 1.5;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 30px;
+  gap: 15px;
+  max-width: 280px;
+}
+
+.social-icons .social-icon {
+  opacity: 0.8;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.social-icons .social-icon:active {
+  transform: scale(0.9);
+  opacity: 1;
+}
+
+.links-container {
+  width: 100%;
+  max-width: 320px;
+}
+
+.link-item {
+  background-color: transparent;
+  border: 1.5px solid rgba(0,0,0);
+  border-radius: 28px;
+  padding: 18px;
+  margin-bottom: 16px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.link-item:hover {
+  border-color: rgba(0,0,0,0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.link-item:active {
+  transform: scale(0.96);
+  background-color: rgba(0,0,0,0.03);
+}
+
+.link-item text {
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+
+.info {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #666;
+  font-weight: lighter;
+  text-align: center;
+}

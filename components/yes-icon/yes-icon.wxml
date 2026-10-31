@@ -1,0 +1,4 @@
+<!--components/yes-icon/yes-icon.wxml-->
+<view class="yes-icon" style="width:{{iconSize}};height:{{iconSize}}">
+  <image wx:if="{{src}}" class="yes-icon__image" src="{{src}}" mode="aspectFit"></image>
+</view>

@@ -1,0 +1,12 @@
+/* components/yes-icon/yes-icon.wxss */
+.yes-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.yes-icon__image {
+  width: 100%;
+  height: 100%;
+}

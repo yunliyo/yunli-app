@@ -1,0 +1,145 @@
+/**pages/mine/mine.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #F8F2F5;
+}
+
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+}
+
+/* 用户信息区域 */
+.user-section {
+  background: linear-gradient(135deg, #e8d4e0 0%, #d4a5c4 100%);
+  padding: 60rpx 40rpx 40rpx;
+  color: #000000;
+  font-size: 65rpx;
+  font-weight: bolder;
+  text-align: center;
+}
+
+/* 菜单区域 */
+.menu-section {
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+/* 菜单列表 */
+.menu-list {
+  padding: 0 20rpx;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  transition: background 0.3s;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:active {
+  background: #f9f9f9;
+}
+
+.menu-icon {
+  flex: none;
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 24rpx;
+}
+
+.menu-text {
+  flex: 1;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.menu-arrow {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.menu-phone {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.menu-email {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.menu-wechat {
+  font-size: 30rpx;
+  color: #666;
+}
+
+/* 二维码弹窗 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 60rpx 40rpx;
+  margin: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40rpx;
+}
+
+.qrcode-image {
+  width: 500rpx;
+  height: 500rpx;
+  margin-bottom: 30rpx;
+}
+
+.qrcode-tip {
+  font-size: 30rpx;
+  color: #666;
+  margin-bottom: 40rpx;
+}
+
+.modal-text {
+  font-size: 30rpx;
+  color: #666;
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 40rpx;
+}
+
+.modal-text-content {
+  min-width: 500rpx;
+}
+
+.modal-close {
+  padding: 20rpx 60rpx;
+  background: #8d4bbb;
+  color: #fff;
+  border-radius: 50rpx;
+  font-size: 30rpx;
+}

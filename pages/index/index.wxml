@@ -1,0 +1,28 @@
+<navigation-bar id="navigationBar" title="韵狸YUNLI" back="{{true}}" home="{{true}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="profile-container">
+    <image class="avatar" src="{{avatar}}" mode="aspectFill"></image>
+    <text class="nickname">{{nickname}}</text>
+    <text class="bio">{{bio}}</text>
+    <view class="social-icons">
+      <van-icon class="social-icon" name="qq" size="48rpx" color="#000000" bindtap="copyText" data-text="{{socials.qq}}"></van-icon>
+      <van-icon class="social-icon" name="wechat" size="48rpx" color="#000000" bindtap="copyText" data-text="{{socials.wechat}}"></van-icon>
+      <yes-icon class="social-icon" name="github" size="48rpx" color="#000000" bindtap="copyURL" data-text="{{socials.github}}"></yes-icon>
+      <van-icon class="social-icon" name="envelop-o" size="48rpx" color="#000000" bindtap="copyURL" data-text="{{socials.email}}"></van-icon>
+    </view>
+    <view class="links-container">
+      <block wx:for="{{buttons}}" wx:key="index">
+        <view
+        class="link-item"
+        bindtap="{{item.copyText ? 'copyText' : 'navigateTo'}}"
+        data-text="{{item.copyText}}"
+        data-url="{{item.navigateTo}}"
+        ><text>{{item.text}}</text></view>
+      </block>
+    </view>
+    <view class="info">
+      <view class="yiyan">{{yiyan}}</view>
+      <view class="copyright" >{{copyright}}</view>
+    </view>
+  </view>
+</scroll-view>

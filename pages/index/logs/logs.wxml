@@ -1,0 +1,41 @@
+<!--pages/index/logs/logs.wxml-->
+<navigation-bar id="navigationBar" title="个人名片" back="{{true}}" home="{{true}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="card">
+    <!-- 头部：头像 + 昵称 + 简介 -->
+    <view class="card-header">
+      <image class="avatar" src="{{profile.avatar}}" mode="aspectFill"></image>
+      <view class="header-text">
+        <text class="name">{{profile.name}}</text>
+        <text class="bio">{{profile.bio}}</text>
+      </view>
+    </view>
+    <!-- 座右铭 -->
+    <view class="motto">{{profile.motto}}</view>
+    <!-- 信息列表 -->
+    <view class="field-list">
+      <view
+        class="field-item"
+        wx:for="{{fields}}"
+        wx:key="key"
+        hover-class="{{item.action ? 'field-item--hover' : 'none'}}"
+        bindtap="onFieldTap"
+        data-index="{{index}}"
+      >
+        <yes-icon wx:if="{{item.custom}}" class="field-icon" name="{{item.icon}}" size="36rpx" color="#4b4b4b" />
+        <van-icon wx:else class="field-icon" name="{{item.icon}}" size="36rpx" color="#4b4b4b" />
+        <text class="field-label">{{item.label}}</text>
+        <text class="field-value {{item.link ? 'field-value--link' : ''}}">{{item.value}}</text>
+      </view>
+    </view>
+    <!-- 操作按钮 -->
+    <view class="action-row">
+      <van-button
+        custom-class="action-btn"
+        size="small"
+        round
+        bind:tap="onMoreLinks"
+      >更多信息</van-button>
+    </view>
+  </view>
+</scroll-view>
